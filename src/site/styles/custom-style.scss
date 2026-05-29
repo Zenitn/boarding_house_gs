@@ -1,59 +1,58 @@
 /* =============================================
-   ЧИСТО БЕЛЫЙ + НЕЖНО-ГОЛУБОЙ МИНИМАЛИЗМ
+   НЕЖНО-ГОЛУБОЙ ФОН + ТЁМНЫЙ ТЕКСТ
    ============================================= */
 
 :root {
-  --background-primary: #ffffff;      /* ЧИСТЫЙ БЕЛЫЙ ФОН */
-  --background-secondary: #f8fafc;    /* Очень светлый серо-белый для боковой панели */
-  --text-normal: #1f2937;             /* Тёмный текст */
-  --text-muted: #64748b;
-  --accent: #4a9eff;                  /* Красивый нежно-голубой */
-  --accent-hover: #2563eb;            /* Более насыщенный голубой при наведении */
-  --border-color: #e2e8f0;
-  --card-bg: #ffffff;
+  --background-primary: #f0f7ff;      /* Нежно-голубой фон (основной) */
+  --background-secondary: #e0efff;    /* Темнее для боковых панелей */
+  --text-normal: #1f2a44;             /* Тёмный текст */
+  --text-muted: #4a5d7a;
+  --accent: #3b8cff;                  /* Нежно-голубой для ссылок */
+  --accent-hover: #1e6bd8;
+  --border-color: #c5d9f0;
+  --card-bg: #ffffff;                 /* Белые карточки для контраста */
 }
 
-/* Основной фон сайта */
+/* Основной фон */
 body, .main-content {
-  background-color: #ffffff !important;
+  background-color: var(--background-primary) !important;
 }
 
-/* Ссылки — исправляем цвет */
+/* Ссылки */
 a, a.internal-link, a.external-link {
   color: var(--accent) !important;
-  text-decoration: none;
 }
 
-a:hover, a.internal-link:hover, a.external-link:hover {
+a:hover {
   color: var(--accent-hover) !important;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-/* Ширина и воздух */
+/* Ширина и удобство чтения */
 body {
-  --dg-content-max-width: 820px;
+  --dg-content-max-width: 840px;
   font-family: "Inter", system-ui, sans-serif;
-  line-height: 1.78;
+  line-height: 1.8;
 }
 
 /* Заголовки */
 h1, h2, h3, h4 {
-  color: #1e3a8a;
+  color: #1e2a5e;
   font-weight: 600;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.9rem; margin-top: 2.8rem; }
+h1 { font-size: 2.45rem; }
+h2 { font-size: 1.85rem; margin-top: 2.6rem; }
 
-/* Карточки и callouts */
+/* Карточки заметок и callouts */
 .note-container, .callout {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 30px;
   margin: 32px 0;
-  box-shadow: 0 4px 15px rgba(74, 158, 255, 0.07);
+  box-shadow: 0 6px 18px rgba(59, 140, 255, 0.08);
 }
 
 .callout {
@@ -61,20 +60,21 @@ h2 { font-size: 1.9rem; margin-top: 2.8rem; }
   border-left-color: var(--accent);
 }
 
-/* Боковая панель */
-.sidebar {
+/* Боковая панель — темнее фона */
+.sidebar, .left-sidebar, .right-sidebar {
   background-color: var(--background-secondary) !important;
+  border-right: 1px solid var(--border-color);
+}
+
+/* Шапка сайта */
+.site-header {
+  background: rgba(240, 247, 255, 0.97);
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Canvas */
 .canvas-wrapper {
   border-radius: 16px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border-color);
   background: white;
-}
-
-/* Убираем лишние границы */
-.site-header {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #e2e8f0;
 }
