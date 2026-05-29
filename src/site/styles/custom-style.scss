@@ -76,5 +76,53 @@ h2 { font-size: 1.85rem; margin-top: 2.6rem; }
 .canvas-wrapper {
   border-radius: 16px;
   border: 1px solid var(--border-color);
+
+
+   /* =============================================
+   УБИРАЕМ ОРАНЖЕВЫЕ ЦВЕТА
+   ============================================= */
+
+/* Маркеры списков (bullets) */
+ul > li::before,
+ol > li::before {
+  background-color: var(--accent) !important;
+}
+
+/* Чекбоксы задач */
+.task-list-item-checkbox {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.task-list-item-checkbox:checked {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Иконки callouts и разные маркеры */
+.callout-icon,
+.admonition-icon,
+.list-bullet,
+.markdown-preview-view ul > li > p::before {
+  color: var(--accent) !important;
+}
+
+/* Выделение и акценты, которые часто бывают оранжевыми */
+::selection {
+  background-color: rgba(59, 140, 255, 0.25) !important;
+}
+
+/* Теги */
+.tag {
+  background-color: rgba(59, 140, 255, 0.1) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Общее принудительное перекрытие оранжевого */
+a, .internal-link, .external-link,
+strong, .highlight, .math.inline {
+  color: var(--accent) !important;
+}
   background: white;
 }
