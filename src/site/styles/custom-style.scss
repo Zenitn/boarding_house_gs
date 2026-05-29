@@ -1,13 +1,112 @@
+/* =============================================
+   Нежно-голубой минимализм для Digital Garden
+   ============================================= */
+
+:root {
+  /* Основные цвета */
+  --background-primary: #f8fbff;      /* очень светлый голубоватый белый */
+  --background-secondary: #f0f5fa;    /* чуть темнее для боковых панелей */
+  --text-normal: #2a3b4f;             /* глубокий тёмно-синий-серый */
+  --text-muted: #64748b;              /* приглушённый текст */
+  --accent: #60a5fa;                  /* нежно-голубой акцент */
+  --accent-hover: #3b82f6;            /* чуть ярче при наведении */
+  --border-color: #e2e8f0;            /* очень лёгкие границы */
+  --card-bg: #ffffff;                 /* белые карточки */
+}
+
+/* Основной фон и ширина */
 body {
-    /***
-      ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-   ***/
-    //  background-color: white;
-    //  .content {
-    //   font-size: 14px;
-    //  }
-    //  h1 {
-    //   color: black;
-    //  }
+  background-color: var(--background-primary);
+  --dg-content-max-width: 820px;      /* комфортная ширина текста */
+  --dg-sidebar-max-width: 280px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.75;
+}
+
+/* Заголовки */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #1e3a8a;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1.8rem;
+}
+
+h2 {
+  font-size: 1.85rem;
+  margin-top: 2.5rem;
+}
+
+/* Ссылки */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Карточки и заметки */
+.note-container,
+.callout {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 28px;
+  margin: 28px 0;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.06);
+}
+
+.callout {
+  padding: 20px;
+  border-left-width: 5px;
+  border-left-color: var(--accent);
+}
+
+/* Боковая панель */
+.sidebar {
+  background-color: var(--background-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Поиск и навигация */
+.search-input {
+  border-radius: 9999px;
+  background: white;
+  border: 1px solid var(--border-color);
+}
+
+/* Минималистичные отступы и воздух */
+.content {
+  padding: 40px 20px;
+}
+
+/* Убираем лишнее для минимализма */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(248, 251, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.backlinks-container,
+.graph-container {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+
+/* Canvas улучшения */
+.canvas-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: white;
 }
